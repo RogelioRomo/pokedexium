@@ -1,16 +1,17 @@
-<main>
+<main class="flex items-center justify-center h-screen">
     {{!< layouts/main}}
-    <h1>Login</h1>
-    <form action="/login" method="post">
-        <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+    <form class="flex flex-col items-center bg-white border-solid border-8 border-[#0071b9] rounded-lg p-4" action="/login" method="post">
+        <h1 class="p-4 hidden">Pokedexium</h1>
+        <img class="" src="/images/pokemon-logo.svg" alt="pokemon logo">
+        <div class="flex flex-row p-2 mb-2 border-solid border-b-2">
+            <img class="w-6" src="/images/email.svg" alt="email">
+            <input class="border-solid rounded-lg ml-3 p-2" type="email" id="email" name="email" placeholder="Enter your email" required>
         </div>
-        <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <div class="flex flex-row p-2 mb-2 border-solid border-b-2">
+            <img class="w-6" src="/images/password.svg" alt="password">
+            <input class="border-solid rounded-lg ml-3 p-2" type="password" id="password" name="password" placeholder="Enter your password" required>
         </div>
-        <button type="submit">Login</button>
+        <button class="my-10" type="submit"><img src="/images/" alt="login"></button>
+        <p>Don't have an account? <a class="text-[blue]" href="/signup">Sign up</a></p>
     </form>
-    <p>Don't have an account? <a href="/signup">Sign up</a></p>
 </main>
