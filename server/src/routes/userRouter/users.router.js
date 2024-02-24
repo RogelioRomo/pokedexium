@@ -21,7 +21,7 @@ userRouter
   .get('/:uid', async (req, res) => {
     try {
       const { uid } = req.params
-      const user = await userService.getUserByid({ _id: uid })
+      const user = await userService.getUserById({ _id: uid })
 
       res.send({
         status: 'success',

@@ -1,6 +1,6 @@
 <main class="flex items-center justify-center h-screen">
     {{!< layouts/main}}
-    <form class="flex flex-col items-center bg-white border-solid border-8 border-[#0071b9] rounded-lg p-4" action="/login" method="post">
+    <form class="flex flex-col items-center bg-white border-solid border-8 border-[#0071b9] rounded-lg p-4" action="/api/session/login" method="post">
         <h1 class="p-4 hidden">Pokedexium</h1>
         <img class="" src="/images/pokemon-logo.svg" alt="pokemon logo">
         <div class="flex flex-row p-2 mb-2 border-solid border-b-2">
@@ -11,7 +11,7 @@
             <img class="w-6" src="/images/password.svg" alt="password">
             <input class="border-solid rounded-lg ml-3 p-2" type="password" id="password" name="password" placeholder="Enter your password" required>
         </div>
-        <button class="my-10" type="submit"><img src="/images/" alt="login"></button>
-        <p>Don't have an account? <a class="text-[blue]" href="/signup">Sign up</a></p>
+        <button class="my-10" type="submit"><img src="/images/pokeball.svg" alt="login" title="login"></button>
+        <p>Don't have an account? <a class="text-[blue]" href="/api/session/signup">Sign up</a></p>
     </form>
 </main>

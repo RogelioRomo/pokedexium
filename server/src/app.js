@@ -20,10 +20,15 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(session({
-  secret: 'secr3t0',
-  resave: true,
+  secret: process.env.SECRET,
+  resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: MONGO_URL })
+  store: MongoStore.create({ mongoUrl: MONGO_URL }),
+  cookie: {
+    maxAge: 180 * 60 * 1000,
+    secure: true,
+    sameSite: 'none'
+  }
 }))
 
 app.engine('handlebars', handlebars.engine())

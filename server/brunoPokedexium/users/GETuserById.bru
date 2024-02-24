@@ -1,0 +1,15 @@
+meta {
+  name: GETuserById
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{USER_URL}}/{{uid}}
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  uid: 65d95617ad5d660d3146165a
+}

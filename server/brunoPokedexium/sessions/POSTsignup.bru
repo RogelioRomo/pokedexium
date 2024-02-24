@@ -1,0 +1,19 @@
+meta {
+  name: POSTsignup
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{SESSION_URL}}/signup
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username":"",
+    "email":"",
+    "password":""
+  }
+}

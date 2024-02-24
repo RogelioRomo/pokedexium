@@ -1,0 +1,18 @@
+meta {
+  name: POSTlogin
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{SESSION_URL}}/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email":"roger@gmail.com",
+    "password":"1234"
+  }
+}

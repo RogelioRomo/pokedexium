@@ -1,0 +1,19 @@
+meta {
+  name: POSTcreateUser
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{USER_URL}}
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username":"maria",
+    "email":"maria@gmail.com",
+    "password":"4321"
+  }
+}

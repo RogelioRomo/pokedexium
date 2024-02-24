@@ -1,0 +1,22 @@
+meta {
+  name: PUTupdateUserById
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{USER_URL}}/{{uid}}
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "isActive":"true",
+    "role": "user"
+  }
+}
+
+vars:pre-request {
+  uid: 65d9609e59d809331d8c18bc
+}
