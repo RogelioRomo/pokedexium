@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 :root {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
 }
 
 *{
   box-sizing: border-box;
 }
 body{
-  background-color: #000;
+  background-color: #191919;
   margin:0;
   padding: 24px 5% 8px 5%;
   min-height: 100%;
