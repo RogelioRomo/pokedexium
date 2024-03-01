@@ -1,21 +1,36 @@
 import { Link } from 'react-router-dom'
+import './PokemonPreview.css'
 
 export const PokemonPreview = () => {
   return (
-    <div className='rounded-xl bg-[#c1c1c1] shadow-custom w-fit p-6'>
-      <div className='rounded-full bg-[#c1c1c1] shadow-custom w-32 h-32 mb-4 flex justify-center items-center'>
-        <Link>
-          <img
-            src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'
-            alt='Bulbasaur'
-            className='w-28 h-28 rounded-full overflow-hidden bg-white'
-          />
-        </Link>
+    <div className='card'>
+      <div className='top-section'>
+        <div className='border' />
+        <div className='icons'>
+          <div className='logo'>
+            <img src='/images/pokeball.svg' alt='pokeball' />
+          </div>
+          <div className='pokemonNumber'>
+            <span>#001</span>
+          </div>
+        </div>
       </div>
-      <div className='rounded-xl bg-[#c1c1c1] shadow-custom flex flex-col items-center'>
-        <h2>Number</h2>
-        <h2>Name</h2>
-        <h2>Type</h2>
+      <div className='bottom-section'>
+        <span className='title'>Pokemon Name</span>
+        <div className='row row1'>
+          <div className='item'>
+            <span className='big-text'>Gen</span>
+            <span className='regular-text'>I</span>
+          </div>
+          <div className='item'>
+            <span className='big-text'>Type</span>
+            <span className='regular-text'>Plant</span>
+          </div>
+          <div className='item'>
+            <span className='big-text'>Type</span>
+            <span className='regular-text'>Venom</span>
+          </div>
+        </div>
       </div>
     </div>
   )

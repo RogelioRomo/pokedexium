@@ -23,10 +23,10 @@ export const NavBar = () => {
   }
 
   return (
-    <nav className='p-2 flex flex-col items-center xl:flex-row xl:justify-between border-b-2 border-solid border-white'>
+    <nav className='p-2 flex flex-col items-center xl:flex-row xl:justify-between xl:border-b-2 xl:border-solid xl: border-[#313131]'>
       <Pokedexium className='lg:order-1' />
 
-      <ul className='bg-[#fff] rounded-full w-fit h-[40px] p-2 mb-6 flex flex-row justify-around overflow-hidden items-center xl:mb-0 xl:order-3'>
+      <ul className='bg-[#404040] rounded-full w-fit h-[40px] p-2 mb-6 flex flex-row justify-around overflow-hidden items-center xl:mb-0 xl:order-3'>
         {isBurgerMenuOpen && (
           <div className='flex flex-row justify-around items-center overflow-hidden'>
             <li className='px-3 text-sm md:text-base'><Link to='/'>Home</Link></li>
@@ -47,8 +47,8 @@ export const NavBar = () => {
         </li>
       </ul>
 
-      <div className='bg-[#fff] rounded-full p-2 flex flex-row justify-between overflow-hidden xl:order-2 xl:w-[40rem]'>
-        <input className='px-2 outline-none xl:w-[35rem]' type='text' placeholder='Search...' />
+      <div className='bg-[#404040] rounded-full p-2 flex flex-row justify-between overflow-hidden xl:order-2 xl:w-[40rem]'>
+        <input className='px-2 outline-none xl:w-[35rem] bg-[#404040] placeholder:text-black' type='text' placeholder='Search...' />
         <div className='flex flex-row'>
           <img className='px-2 min-w-6' src='/images/vertical-divider.svg' alt='divider' aria-label='divider' />
           <button>
