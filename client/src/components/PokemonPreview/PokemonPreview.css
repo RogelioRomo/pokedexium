@@ -25,6 +25,13 @@ I am using a css file to manage styles in this pokemon preview cards */
     position: relative;
   }
   
+  .card .top-section .image-section{
+    margin: auto; 
+  }
+  .image-size {
+    max-width: 100px;
+    max-height: 100px;
+  }
   .card .top-section .border {
     border-bottom-right-radius: 10px;
     height: 30px;
@@ -96,6 +103,7 @@ I am using a css file to manage styles in this pokemon preview cards */
     color: white;
     text-align: center;
     letter-spacing: 2px;
+    text-transform: capitalize;
   }
   
   .card .bottom-section .row {
@@ -118,6 +126,7 @@ I am using a css file to manage styles in this pokemon preview cards */
   
   .card .bottom-section .row .item .regular-text {
     font-size: 11px;
+    text-transform: capitalize;
   }
   
   .card .bottom-section .row .item:nth-child(2) {

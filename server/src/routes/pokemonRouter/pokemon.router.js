@@ -6,7 +6,7 @@ const pokemonRouter = Router()
 pokemonRouter
   .get('/', async (req, res) => {
     try {
-      const result = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=10')
+      const result = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=60')
       const pokemonData = result.data.results
 
       const pokemonDetails = await Promise.all(pokemonData.map(async (pokemon) => {
