@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import './PokemonPreview.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Loader } from '../Loader/Loader.jsx'
 
 export const PokemonPreview = () => {
   const [pokemon, setPokemon] = useState(null)
@@ -16,13 +17,17 @@ export const PokemonPreview = () => {
   }, [])
 
   if (!pokemon) {
-    return <div className='text-white'>Loading...</div>
+    return (
+      <div className=''>
+        <Loader />
+      </div>
+    )
   }
 
   return (
     <>
       {pokemon.map((poke, index) => (
-        <div key={index}>
+        <Link key={index}>
           <div className='card'>
             <div className='top-section'>
               <div className='border' />
@@ -35,20 +40,24 @@ export const PokemonPreview = () => {
                 </div>
               </div>
               <div className='image-section'>
-                <img className='image-size' src={poke.image} alt='gif of pokemon' />
+                <img className='image-size' src={poke.image} alt={`${poke.name}`} title={`${poke.name}`} />
               </div>
             </div>
             <div className='bottom-section'>
               <span className='title'>{poke.name}</span>
-              <div className='row row1'>
+              <div className='row'>
+                <div className='item'>
+                  <span className='big-text'>Gen</span>
+                  <span className='xl-text'>{poke.generation.split('generation-')}</span>
+                </div>
                 <div className='item'>
                   <span className='big-text'>Type</span>
-                  <span className='regular-text'>{poke.types.join(' and ')}</span>
+                  <span className='regular-text'>{poke.types.join(' & ')}</span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </>
   )

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Pokedexium } from '../Pokedexium/Pokedexium'
+import { Pokedexium } from '../Pokedexium/Pokedexium.jsx'
 
 export const NavBar = () => {
   const [isBurgerMenuOpen, setBurgerMenuOpen] = useState(window.matchMedia('(min-width: 1280px)').matches)
@@ -31,7 +31,7 @@ export const NavBar = () => {
           <div className='flex flex-row justify-around items-center overflow-hidden'>
             <li className='px-3 text-sm md:text-base'><Link to='/'>Home</Link></li>
             <li className='px-3 text-sm md:text-base'><Link to='/'>Challenge</Link></li>
-            <li className='px-3 text-sm md:text-base'><Link to='/'>About</Link></li>
+            <li className='px-3 text-sm md:text-base'><Link to='/'>Teams</Link></li>
             <li className='px-1'><img src='/images/vertical-divider.svg' alt='divider' /></li>
           </div>
         )}

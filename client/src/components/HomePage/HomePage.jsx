@@ -1,6 +1,5 @@
-import { NavBar } from '../NavBar/NavBar'
-import { Pokedexium } from '../Pokedexium/Pokedexium'
-import { PokemonPreview } from '../PokemonPreview/PokemonPreview'
+import { NavBar } from '../NavBar/NavBar.jsx'
+import { PokemonPreview } from '../PokemonPreview/PokemonPreview.jsx'
 
 export const HomePage = () => {
   return (
