@@ -16,7 +16,7 @@ export const SignupCard = () => {
   }, [])
   return (
     <main className='flex items-center justify-center h-screen'>
-      <form className='flex flex-col items-center bg-white border-solid border-8 border-[#0071b9] rounded-lg p-4'>
+      <form className='flex flex-col items-center bg-[#fff] border-solid border-8 border-[#0071b9] rounded-lg p-4'>
         <h1 className='p-4 hidden'>Signup</h1>
         <img className='' src='/images/pokemon-logo.svg' alt='classic pokemon logo' />
         <div className='flex flex-row p-2 mb-2 border-solid border-b-2'>
