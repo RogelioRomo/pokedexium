@@ -6,8 +6,13 @@ const pokemonRouter = Router()
 pokemonRouter
   .get('/', async (req, res) => {
     try {
-      const result = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=10')
-      const pokemonData = result.data.results
+      const page = parseInt(req.query.page) || 1
+      const limit = parseInt(req.query.limit) || 20
+      const offset = (page - 1) * limit
+      const search = req.query.search || ''
+
+      const result = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
+      const pokemonData = result.data.results.filter(pokemon => pokemon.name.toLowerCase().includes(search.toLowerCase()))
 
       const pokemonDetails = await Promise.all(pokemonData.map(async (pokemon) => {
         const detail = await axios.get(pokemon.url)
@@ -51,7 +56,8 @@ pokemonRouter
 
       res.send({
         status: 'success',
-        result: pokemonDetails
+        result: pokemonDetails,
+        total: result.data.count
       })
     } catch (error) {
       console.error(error)

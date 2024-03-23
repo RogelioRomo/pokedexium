@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Pokedexium } from '../Pokedexium/Pokedexium.jsx'
+import PropTypes from 'prop-types'
 
-export const NavBar = () => {
+export const NavBar = ({ setSearchTerm }) => {
   const [isBurgerMenuOpen, setBurgerMenuOpen] = useState(window.matchMedia('(min-width: 1280px)').matches)
 
   useEffect(() => {
@@ -48,7 +49,7 @@ export const NavBar = () => {
       </ul>
 
       <div className='bg-[#404040] rounded-full p-2 flex flex-row justify-between overflow-hidden xl:order-2 xl:w-[40rem]'>
-        <input className='px-2 outline-none xl:w-[35rem] bg-[#404040] placeholder:text-black' type='text' placeholder='Search...' />
+        <input className='px-2 outline-none xl:w-[35rem] bg-[#404040] placeholder:text-[#000]' onChange={e => setSearchTerm(e.target.value)} type='text' placeholder='Search on current page...' />
         <div className='flex flex-row'>
           <img className='px-2 min-w-6' src='/images/vertical-divider.svg' alt='divider' aria-label='divider' />
           <button>
@@ -58,4 +59,8 @@ export const NavBar = () => {
       </div>
     </nav>
   )
+}
+
+NavBar.propTypes = {
+  setSearchTerm: PropTypes.func.isRequired
 }
